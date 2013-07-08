@@ -1,12 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Lilita+One);
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,900);
+
+body
+{
+	font-family: 'Maven Pro';
+}
+
+h1, h2, h3{
+	font-family: 'Lilita One';
+}
+
+.navbar
+{
+	.brand
+	{
+		font-weight: 900;
+	}
+
+	a{
+	    transition: all 0.2s ease-in-out 0s;
+	}
+}
 .header-banner
 {
 	background: linear-gradient(45deg, #E67E22 0%, #D35400 100%) repeat scroll 0 0 transparent;
 	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
-	padding:40px 0px;
+	padding:100px 0px;
 	position: relative;
 	color: #FFFFFF;
 	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
 
+	h1
+	{
+		font-size: 8em;
+
+	}
 	.container
 	{
 		margin-top: 40px;
@@ -25,13 +53,105 @@
 }
 
 .header-banner:after {
-    background: url("../img/") repeat scroll center center transparent;
+    background: url("../image/master_banner.png") repeat scroll center center transparent;
     bottom: 0;
     content: "";
     display: block;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.25;
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.main-container
+{
+	margin-top: 2em;
+	min-height: 300px;
+	font-size: 1.5em;
+
+	.row-portfolio
+	{
+		.work
+		{
+			font-size: 6em;
+		}
+
+		p
+		{
+			font-size: 1em;
+			line-height: 1.3em;	
+		}
+		margin-bottom: 2em;
+	}
+}
+
+.footer {
+	text-align: center;
+	padding: 30px 0;
+	margin-top: 70px;
+	border-top: 1px solid #e5e5e5;
+	background-color: #ECF0F1;
+
+	.footer-links {
+		margin: 10px 0;
+		li {
+			display: inline;
+			padding: 0 2px;
+		}
+		li:first-child {
+			padding-left: 0;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.header-banner {
+		h1
+		{
+			font-size: 5em;
+		}
+		padding: 40px 20px;
+		margin-top: -20px;
+		margin-right: -20px;
+		margin-left: -20px;
+	}
+
+	.footer {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+}
+
+@media (min-width: 767px) and (max-width: 979px) {
+	.header-banner {
+		h1
+		{
+			font-size: 5em;
+		}
+		margin-top: -20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.header-banner {
+		h1
+		{
+			font-size: 3em;
+
+			h3
+			{
+				font-size: 0.8em;
+			}
+		}
+	}
+
+	.footer {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
 }
