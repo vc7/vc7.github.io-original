@@ -70,19 +70,41 @@ h1, h2, h3{
 	min-height: 300px;
 	font-size: 1.5em;
 
+	h1
+	{
+		color:#d35400;
+	}
 	.row-portfolio
 	{
 		.work
 		{
 			font-size: 6em;
+			display: block;
+			position: relative;
+
+		}
+
+		.work:hover
+		{
+		    transition: all 0.2s ease-in-out 0s;
+			color: #E67e22;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+
 		}
 
 		p
 		{
 			font-size: 1em;
+		    transition: all 0.2s ease-in-out 0s;
 			line-height: 1.3em;	
 		}
 		margin-bottom: 2em;
+	}
+	#map
+	{
+		margin-top: 2em;
+		height: 200px;
+		border:10px solid #E67e22;
 	}
 }
 
@@ -92,6 +114,11 @@ h1, h2, h3{
 	margin-top: 70px;
 	border-top: 1px solid #e5e5e5;
 	background-color: #ECF0F1;
+
+	a
+	{
+		color: #d35400;
+	}
 
 	.footer-links {
 		margin: 10px 0;

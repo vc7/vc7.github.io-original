@@ -23,6 +23,9 @@
   <link href="css/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen">
   <link href="css/font-awesome/css/font-awesome-ie7.min.css" rel="stylesheet" media="screen">
 
+  <!--  Map Box CSS -->
+  <link href='//api.tiles.mapbox.com/mapbox.js/v1.2.0/mapbox.css' rel='stylesheet' />
+
   <!--  My CSS  -->
   <link href="css/style.css" rel="stylesheet" media="screen">
 
@@ -53,11 +56,15 @@
   <script src="js/jquery/jquery.min.js"></script>
   <script src="js/bootstrap/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.2.0/mapbox.js'></script>
   <!-- JS  -->
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
     <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lte IE 8]>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.2.0/mapbox.ie.css' rel='stylesheet' >
   <![endif]-->
 </head>
 <body class="main-page">
@@ -71,21 +78,21 @@
           <span class="icon-bar"></span>
         </a>
         <a class="brand" href="#">
-          <span class="hidden-phone">Vincent's</span>
+          <span>Vincent's</span>
         </a>
         <div class="nav-collapse collapse">
           <ul class="nav">
             <li class="active">
-              <a href="./index.html">Home</a>
+              <a href="#">Home</a>
             </li>
             <li class="">
-              <a href="./getting-started.html">About Me</a>
+              <a href="#">About Me</a>
             </li>
             <li class="">
-              <a href="./scaffolding.html">My Skills</a>
+              <a href="#">My Skills</a>
             </li>
             <li class="">
-              <a href="./base-css.html">My Works</a>
+              <a href="#">My Works</a>
             </li>
           </ul>
         </div>
@@ -96,7 +103,7 @@
   <!-- Header Banner ================================================== -->
   <header id="overview" class="header-banner">
     <div class="container">
-      <h1>Hi, I'm Li Xuan <small>(澧萱)</small></h1>
+      <h1>Hi, I'm Li Hsuan <small>(澧萱)</small></h1>
       <p class="lead">I'm playing with php, objective-C and more.</p>
     </div>
   </header>
@@ -106,7 +113,11 @@
   <div class="container main-container">
     <h1>Who am I</h1>
     <div class="row row-portfolio">
-      <div class="span12">I'm Li-Xuan Chen <small class="muted">(陳澧萱, Vincent Chen or vince78718)</small>, I came from <a href="https://maps.google.com/maps?q=taiwan">Taiwan</a>. I playing with codes and some new techs.</div>
+      <div class="span12">I'm Li-Hsuan Chen <small class="muted">(陳澧萱, Vincent Chen or vince78718)</small>, I came from <a href="https://maps.google.com/maps?q=taiwan">Taiwan</a> <small class="muted">(台灣)</small>. I playing with codes and some new techs.</div>
+      <div id='map' class="span12"></div>
+      <script type='text/javascript'>
+        var map = L.mapbox.map('map', 'vince78718.map-6z5j80z7').setView([23.633333, 121.633333], 6);
+      </script>
     </div>
 
     <h1>What I am doing</h1>
@@ -132,7 +143,7 @@
           <span class="icon-hand-up work"></span>
           <hr>
           <h2 class="text-info">Play</h2>
-          <p>Not only digging into world of codes, I playing <strong>Diablo III</strong> <small class="muted">(Oh, yaaa!)</small>, riding bikes, watching movies and playing some games on Facebook and Mobile.</p>
+          <p>Not only digging into world of codes, I playing <strong>music</strong> <small class="muted">(violin and piano)</small>, <strong>Diablo III</strong> <small class="muted">(Oh, yaaa!)</small>, riding bikes, watching movies and playing some games on Facebook and Mobile.</p>
         </center>
       </div>
     </div>
@@ -145,8 +156,7 @@
         <p>This site is build with love of
           <a href="http://twitter.github.io/bootstrap">Bootstrap</a>, 
           <a href="http://jquery.com/">jQuery</a>,
-          <a href="http://www.google.com/fonts">Google Fonts</a> and
-          <a href="http://fancybox.net/">fancybox</a>
+          <a href="http://www.google.com/fonts">Google Fonts</a>
         </p>
         <p>Using 
           <a href="http://github.com/">Github</a>, 
