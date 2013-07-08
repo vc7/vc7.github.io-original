@@ -1,5 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Lilita+One);
-@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,900);
+@import url('http://fonts.googleapis.com/css?family=Lilita+One');
+@import url('http://fonts.googleapis.com/css?family=Maven+Pro:400,900');
+@import "elements.less";
+
+@carrot :#E67E22;
+@carrot_dark: #D35400;
 
 body
 {
@@ -8,6 +12,16 @@ body
 
 h1, h2, h3{
 	font-family: 'Lilita One';
+}
+
+/* Mozilla based browsers */
+::-moz-selection {
+   background-color: @carrot;
+}
+
+/* Works in Safari */
+::selection {
+   background-color: @carrot;
 }
 
 .navbar
@@ -35,9 +49,8 @@ h1, h2, h3{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E67E22', endColorstr='#D35400',GradientType=1 );
 	-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
 	-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-
-
 	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
+
 	padding:100px 0px;
 	position: relative;
 	color: #FFFFFF;
