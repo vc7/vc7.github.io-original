@@ -116,7 +116,13 @@
       <div class="span12">I'm Li-Hsuan Chen <small class="muted">(陳澧萱, Vincent Chen or vince78718)</small>, I came from <a href="https://maps.google.com/maps?q=taiwan">Taiwan</a> <small class="muted">(台灣)</small>. I playing with codes and some new techs.</div>
       <div id='map' class="span12"></div>
       <script type='text/javascript'>
-        var map = L.mapbox.map('map', 'vince78718.map-6z5j80z7').setView([23.633333, 121.633333], 6);
+        var map = L.mapbox.map('map', 'vince78718.map-6z5j80z7', {zoomControl: false}).setView([23.633333, 121.633333], 6);
+        
+        // disable drag and zoom handlers
+        map.dragging.disable();
+        map.touchZoom.disable();
+        map.doubleClickZoom.disable();
+        map.scrollWheelZoom.disable();
       </script>
     </div>
 
