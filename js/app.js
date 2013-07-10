@@ -6,3 +6,21 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-40835053-4', 'vince78718.github.io');
 ga('send', 'pageview');
+
+////// 
+
+
+function IndexController($scope, $http, $templateCache) {
+  $scope.method = 'GET';
+  $scope.url = 'json/test.json';
+
+  $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
+    success(function(data, status) {
+      console.log(data);
+    }).
+    error(function(data, status) {
+      $scope.data = data || "Request failed";
+      $scope.status = status;
+    });
+
+}
