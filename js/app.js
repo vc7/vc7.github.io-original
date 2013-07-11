@@ -9,14 +9,13 @@ ga('send', 'pageview');
 
 ////// 
 
-
-function IndexController($scope, $http, $templateCache) {
+function HomeController($scope, $http, $templateCache) {
   $scope.method = 'GET';
-  $scope.url = 'json/test.json';
+  $scope.url = 'json/index_doing.json';
 
   $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
     success(function(data, status) {
-      console.log(data);
+      $scope.doings = data;
     }).
     error(function(data, status) {
       $scope.data = data || "Request failed";

@@ -72,7 +72,7 @@
 </head>
 <body class="main-page">
   <!-- Navbar ================================================== -->
-  <div class="navbar navbar-fixed-top navbar-inverse" ng-controller="IndexController">
+  <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -131,29 +131,13 @@
     </div>
 
     <h1>What I am doing</h1>
-    <div class="row row-portfolio">
-      <div class="span4">
+    <div class="row row-portfolio" ng-controller="HomeController">
+      <div class="span4" ng-repeat="doing in doings">
         <center>
-          <span class="icon-globe work"></span>
+          <span class="icon-{{doing.icon}} work"></span>
           <hr>
-          <h2 class="text-info">Web</h2>
-          <p>I'm developing web systems using <strong>Javascript</strong>, <strong>PHP</strong> and <strong>MySQL</strong> on LAMP server. Familiar with <strong>MVC</strong> framwork, having some experience on <strong>Web API</strong>.</p>
-        </center>
-      </div>
-      <div class="span4">
-        <center>
-          <span class="icon-mobile-phone work"></span>
-          <hr>
-          <h2 class="text-info">Mobile</h2>
-          <p>I'm mainly developing <strong>iOS</strong> apps now, having developing an <strong>Android</strong> game in the past.</p>
-        </center>
-      </div>
-      <div class="span4">
-        <center>
-          <span class="icon-hand-up work"></span>
-          <hr>
-          <h2 class="text-info">Play</h2>
-          <p>Not only digging into world of codes, I also playing <strong>music</strong> <small class="muted">(violin and piano)</small>, <strong>Diablo III</strong> <small class="muted">(Oh, yaaa!)</small>, riding bikes, watching movies and playing some games on Facebook and Mobile.</p>
+          <h2 class="text-info">{{doing.title}}</h2>
+          <p ng-bind-html-unsafe="doing.content"></p>
         </center>
       </div>
     </div>
@@ -167,6 +151,7 @@
         <p>This site is build with love of
           <a href="http://twitter.github.io/bootstrap">Bootstrap</a>, 
           <a href="http://jquery.com/">jQuery</a>,
+          <a href="http://angularjs.org/">Angular.js</a>,
           <a href="http://www.google.com/fonts">Google Fonts</a>,
           <a href="http://mapbox.com">MapBox</a>
         </p>
