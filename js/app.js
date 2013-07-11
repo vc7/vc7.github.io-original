@@ -9,14 +9,15 @@ ga('send', 'pageview');
 
 ////// 
 
-var root = 'http://localhost:8888/vince78718.github.io/';
+var root = 'http://vince78718.github.io';
+var folder = '/';
 
 angular.module('ngView', [], function($routeProvider, $locationProvider) {
-  $routeProvider.when('/vince78718.github.io/', {
+  $routeProvider.when(folder, {
     templateUrl: 'home.html',
     controller: HomeController
   });
-  $routeProvider.when('/vince78718.github.io/'+'about', {
+  $routeProvider.when(folder+'about', {
     templateUrl: 'about.html',
     controller: AboutController
   });
@@ -27,7 +28,7 @@ angular.module('ngView', [], function($routeProvider, $locationProvider) {
 
 function MainController($scope, $route, $routeParams, $location) {
 
-  $scope.root_url = root;
+  $scope.root_url = root+folder;
 
   $scope.$route = $route;
   $scope.$location = $location;
