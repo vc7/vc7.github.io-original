@@ -13,11 +13,11 @@ var root = 'http://vince78718.github.io';
 var folder = '/';
 
 angular.module('ngView', [], function($routeProvider, $locationProvider) {
-  $routeProvider.when(folder, {
+  $routeProvider.when('/', {
     templateUrl: 'home.html',
     controller: HomeController
   });
-  $routeProvider.when(folder+'about', {
+  $routeProvider.when('/about', {
     templateUrl: 'about.html',
     controller: AboutController
   });
