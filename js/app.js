@@ -9,33 +9,8 @@ ga('send', 'pageview');
 
 ////// 
 
-var root = 'http://vince78718.github.io';
-var folder = '/';
-
-angular.module('ngView', [], function($routeProvider, $locationProvider) {
-  $routeProvider.when('/', {
-    templateUrl: 'home.html',
-    controller: HomeController
-  });
-  $routeProvider.when('/about', {
-    templateUrl: 'about.html',
-    controller: AboutController
-  });
- 
-  // configure html5 to get links working on jsfiddle
-  $locationProvider.html5Mode(true);
-});
-
-function MainController($scope, $route, $routeParams, $location) {
-
-  $scope.root_url = root+folder;
-
-  $scope.$route = $route;
-  $scope.$location = $location;
-  $scope.$routeParams = $routeParams;
-
-  console.log($routeParams);
-}
+var root = 'http://localhost:8888';
+var folder = '/vince78718.github.io/';
 
 function HomeController($scope, $http, $templateCache, $route, $routeParams, $location) {
   $scope.method = 'GET';

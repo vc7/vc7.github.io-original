@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-tw">
+<html lang="zh-tw" ng-app>
 <head>
   <!-- Basic info -->
   
@@ -70,8 +70,8 @@
     <link href='//api.tiles.mapbox.com/mapbox.js/v1.2.0/mapbox.ie.css' rel='stylesheet' >
   <![endif]-->
 </head>
-<body class="main-page" ng-app="ngView">
-  <div ng-controller="MainController" >
+<body class="main-page">
+  <div>
     <!-- Navbar ================================================== -->
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
@@ -87,16 +87,16 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active">
-                <a ng-href="{{root_url}}">Home</a>
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="#about">About Me</a>
               </li>
               <li class="">
-                <a ng-href="{{root_url}}about">About Me</a>
+                <a href="#skills">My Skills</a>
               </li>
               <li class="">
-                <a ng-href="{{root_url}}skills">My Skills</a>
-              </li>
-              <li class="">
-                <a ng-href="{{root_url}}works">My Works</a>
+                <a href="#works">My Works</a>
               </li>
             </ul>
           </div>
@@ -104,7 +104,158 @@
       </div>
     </div>
 
-    <div ng-view></div>
+    <!-- Header Banner ================================================== -->
+    <header id="overview" class="header-banner">
+      <div class="container">
+        <h1>Hi, I'm Li Hsuan <small>(澧萱)</small></h1>
+        <p class="lead">I'm playing with php, objective-C and more.</p>
+        <footer><span class="icon-comment"></span><span class=""> And, oh! You can checkout this page on iPad or iPhone too!</span></footer>
+      </div>
+    </header>
+
+
+    <!-- Main container ================================================== -->
+    <div class="container main-container">
+      <div class="well">
+        <span class="icon-certificate text-error"></span> <small class="muted">National Changhua University of Education</small> <strong>Information Management Department (2011).</strong>
+        <footer class="text-right muted"> 
+          <small>(<a href="#about">Detail</a>)</small>
+        </footer>
+      </div>
+      <h1>Who am I</h1>
+      <div class="row row-portfolio" itemscope itemtype="http://www.schema.org/Person">
+        <div class="span12">I'm Li-Hsuan Chen <small class="muted">(陳澧萱, <span itemprop="name">Vincent Chen</span> or vince78718)</small>, I came from <a href="https://maps.google.com/maps?q=taiwan"><span itemprop="nationality">Taiwan</span></a> <small class="muted">(台灣)</small>. I playing with codes and some new techs.</div>
+        <div id='map' class="span12"></div>
+        <script type='text/javascript'>
+          var map = L.mapbox.map('map', 'vince78718.map-6z5j80z7', {zoomControl: false}).setView([23.633333, 121.633333], 6);
+
+          // disable drag and zoom handlers
+          map.dragging.disable();
+          map.touchZoom.disable();
+          map.doubleClickZoom.disable();
+          map.scrollWheelZoom.disable();
+        </script>
+      </div>
+      <hr>
+
+      <h1>What I am Doing</h1>
+      <div class="row row-portfolio" ng-controller="HomeController">
+        <div class="span4" ng-repeat="doing in doings">
+          <center>
+            <span class="icon-{{doing.icon}} work"></span>
+            <hr>
+            <h2 class="text-info">{{doing.title}}</h2>
+            <p ng-bind-html-unsafe="doing.content"></p>
+          </center>
+        </div>
+      </div>
+      <hr>
+
+      <h1 id="skills">My Skills</h1>
+      <div class="row">
+        <div class="span6">
+          <h2>Languages</h2>
+          <h3>HTML</h3>
+          <div class="progress progress-striped">
+            <div class="bar" style="width: 82%"></div>
+          </div>
+          <h3>PHP</h3>
+          <div class="progress progress-striped">
+            <div class="bar" style="width: 80%"></div>
+          </div>
+          <h3>Objective-C</h3>
+          <div class="progress progress-striped">
+            <div class="bar" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      
+      <h1 id="about">About Me</h1>
+      <div class="row">
+        <div class="span12">
+          <h2 id="about">Educational Background</h2>
+          <table class="table table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th class="span5">School</th>
+                <th class="span5">Department</th>
+                <th class="span2">Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="muted">National Changhua University of Education</td>
+                <td class="muted"><center><small><small>Graduated of Digital Technology and Content Management</small><br>Major in Computer Graphics, HCI</small></center></td>
+                <td class="muted"><center>--<br><small>1 year</small></center></td>
+              </tr>
+              <tr>
+                <td>National Changhua University of Education</td>
+                <td><center>Information Management</td>
+                <td><center>2011</center></td>
+              </tr>
+              <tr>
+                <td>Shin Min High School</td>
+                <td><center>Senior High</center></td>
+                <td><center>2007</center></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h2 id="about">Thesis</h2>
+          <table class="table table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th class="span10">Title</th>
+                <th class="span2">Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>探討數位繪圖版與平板電腦在不同繪圖任務之使用性研究：以國小學同為例</td>
+                <td><center>2012</center></td>
+              </tr>
+              <tr>
+                <td>QR code 與擴增實境運用於行動裝置上對消費者購買意願之研究</td>
+                <td><center>2012</center></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h2 id="about">Awards</h2>
+          <table class="table table-hover table-bordered table-striped">
+            <thead>
+              <tr>
+                <th class="span1">Award</th>
+                <th class="span6">Title</th>
+                <th class="span3">Work</th>
+                <th class="span2">Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><center>冠軍</center></td>
+                <td>2012 育成 x APP 開發競賽 - 應用開發組<br><span class="muted">巨鷗科技</span></td>
+                <td><center>Dot 記帳軟體<br><small class="muted">(iOS)</small></center></td>
+                <td><center>Oct. 2012</center></td>
+              </tr>
+              <tr>
+                <td><center>冠軍</center></td>
+                <td>2011 電信創新應用大賽 - 行動應用創新遊戲獎 (校園組)<br><span class="muted">中華電信</span></td> 
+                <td><center>元宵國物語<br><small class="muted">(Android)</small></center></td>
+                <td><center>Dec. 2011</center></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div> 
 
     <!-- Footer ================================================== -->
     <footer class="footer">
