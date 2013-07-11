@@ -9,9 +9,36 @@ ga('send', 'pageview');
 
 ////// 
 
-function HomeController($scope, $http, $templateCache) {
+var root = 'http://localhost:8888/vince78718.github.io/';
+
+angular.module('ngView', [], function($routeProvider, $locationProvider) {
+  $routeProvider.when('/vince78718.github.io/', {
+    templateUrl: 'home.html',
+    controller: HomeController
+  });
+  $routeProvider.when('/vince78718.github.io/'+'about', {
+    templateUrl: 'about.html',
+    controller: AboutController
+  });
+ 
+  // configure html5 to get links working on jsfiddle
+  $locationProvider.html5Mode(true);
+});
+
+function MainController($scope, $route, $routeParams, $location) {
+
+  $scope.root_url = root;
+
+  $scope.$route = $route;
+  $scope.$location = $location;
+  $scope.$routeParams = $routeParams;
+
+  console.log($routeParams);
+}
+
+function HomeController($scope, $http, $templateCache, $route, $routeParams, $location) {
   $scope.method = 'GET';
-  $scope.url = 'json/index_doing.json';
+  $scope.url = 'json/home.json';
 
   $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
     success(function(data, status) {
@@ -22,4 +49,8 @@ function HomeController($scope, $http, $templateCache) {
       $scope.status = status;
     });
 
+}
+
+function AboutController($scope, $http, $templateCache, $route, $routeParams, $location) {
+  // body...
 }
